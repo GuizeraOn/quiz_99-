@@ -1,50 +1,122 @@
 [
     {
-        "id": 101,
-        "name": "Roberto V.",
-        "avatarUrl": "https://i.pravatar.cc/150?u=101",
-        "text": "Al principio dudé porque he probado de todo, pero después de 3 semanas siguiendo el protocolo, me siento como si tuviera 30 años otra vez. ¡La energía volvió!",
+        "id": 1,
+        "name": "Roberto Méndez",
+        "avatarUrl": "https://i.pravatar.cc/150?u=1",
+        "text": "Tengo 62 años y sinceramente pensé que ya no había vuelta atrás con la pérdida de músculo. Llevo 3 semanas aplicando el Protocolo 99% y mis nietos me preguntan de dónde saqué tanta energía. ¡Mis piernas se sienten firmes otra vez!",
         "timeAgo": "3 min",
         "likesCount": 42
     },
     {
-        "id": 102,
-        "name": "Miguel Ángel Torres",
-        "avatarUrl": "https://i.pravatar.cc/150?u=102",
-        "text": "Tengo 58 años y pensaba que esto era 'normal' por la edad. Dr. Javier, gracias por abrirme los ojos. Ya no tengo ese cansancio crónico después de comer.",
+        "id": 2,
+        "name": "Carlos Ruiz",
+        "avatarUrl": "https://i.pravatar.cc/150?u=2",
+        "text": "Totalmente de acuerdo contigo, Roberto. Yo era escéptico porque he probado mil suplementos caros, pero entender la combinación correcta de alimentos lo cambió todo. Es ciencia pura, nada de magia.",
+        "timeAgo": "5 min",
+        "likesCount": 18
+    },
+    {
+        "id": 3,
+        "name": "María Fernanda Torres",
+        "avatarUrl": "https://i.pravatar.cc/150?u=3",
+        "text": "Lo que más me gustó es que no tuve que comprar pastillas raras. Todo está en el supermercado, solo que no sabía cómo combinarlo. Por 9 dólares esto es un regalo, he gastado cientos en nutriólogos que no me dieron este resultado.",
         "timeAgo": "12 min",
         "likesCount": 156
     },
     {
-        "id": 103,
-        "name": "Carlos Ruiz",
-        "avatarUrl": "https://i.pravatar.cc/150?u=103",
-        "text": "Acceso inmediato, todo llegó al correo al instante. Muy profesional.",
+        "id": 4,
+        "name": "Ana Lucía G.",
+        "avatarUrl": "https://i.pravatar.cc/150?u=4",
+        "text": "Justo eso pensé yo, María. Es ridículamente barato para la información que trae. Mi piel y mi cabello también mejoraron muchísimo, creo que por el tema de la absorción real de proteínas.",
+        "timeAgo": "15 min",
+        "likesCount": 34
+    },
+    {
+        "id": 5,
+        "name": "Jorge Luis Castillo",
+        "avatarUrl": "https://i.pravatar.cc/150?u=5",
+        "text": "La conversión automática de moneda funcionó perfecto, pagué con mi tarjeta local sin problemas. Ya estoy leyendo el material y la parte de la 'Utilización Proteica' me voló la cabeza. Nunca nadie me había explicado esto.",
         "timeAgo": "45 min",
         "likesCount": 12
     },
     {
-        "id": 104,
-        "name": "Fernando G.",
-        "avatarUrl": "https://i.pravatar.cc/150?u=104",
-        "text": "Lo mejor es que no tuve que dejar de comer lo que me gusta, solo ajustar los horarios como explica el video. ¡5 kilos menos de pura inflamación!",
+        "id": 6,
+        "name": "Eduardo V.",
+        "avatarUrl": "https://i.pravatar.cc/150?u=6",
+        "text": "Es que los médicos convencionales no te cuentan esto. Yo empecé el lunes y ya siento la digestión diferente, mucho más ligera.",
+        "timeAgo": "50 min",
+        "likesCount": 8
+    },
+    {
+        "id": 7,
+        "name": "Patricia Solís",
+        "avatarUrl": "https://i.pravatar.cc/150?u=7",
+        "text": "Chicos, mi esposo y yo lo estamos haciendo juntos. Él recuperó masa muscular en los brazos que no veía hace 10 años, y yo logré eliminar esa flacidez del abdomen. ¡Recomendadísimo!",
         "timeAgo": "1 h",
         "likesCount": 89
     },
     {
-        "id": 105,
-        "name": "Ana María L.",
-        "avatarUrl": "https://i.pravatar.cc/150?u=105",
-        "text": "Se lo compré a mi esposo que estaba muy decaído. El cambio de humor y energía es impresionante. Chicos, háganlo por su familia 🙏",
+        "id": 8,
+        "name": "Esteban D.",
+        "avatarUrl": "https://i.pravatar.cc/150?u=8",
+        "text": "Qué envidia de la buena, Patricia. Yo empecé solo pero los resultados son tan rápidos que mi esposa se unió ayer al ver mis cambios.",
+        "timeAgo": "1 h",
+        "likesCount": 23
+    },
+    {
+        "id": 9,
+        "name": "Ricardo Arjona",
+        "avatarUrl": "https://i.pravatar.cc/150?u=9",
+        "text": "Sufría de dolores articulares crónicos, pensé que era artritis inevitable por la edad. Resulta que me faltaba colágeno de calidad. Siguiendo el protocolo, el dolor desapareció en un 90%. Gracias por compartir esto.",
         "timeAgo": "2 h",
         "likesCount": 234
     },
     {
-        "id": 106,
-        "name": "Dr. Pablo S.",
-        "avatarUrl": "https://i.pravatar.cc/150?u=106",
-        "text": "Como colega, confirmo que la base científica sobre la síntesis proteica es correcta. Excelente material educativo.",
+        "id": 10,
+        "name": "Carmen Velasco",
+        "avatarUrl": "https://i.pravatar.cc/150?u=10",
+        "text": "¡Increíble Ricardo! A mí me pasó igual con la cadera. Es impresionante lo que el cuerpo puede hacer cuando le das los bloques de construcción correctos.",
+        "timeAgo": "2 h",
+        "likesCount": 45
+    },
+    {
+        "id": 11,
+        "name": "Héctor Salinas",
+        "avatarUrl": "https://i.pravatar.cc/150?u=11",
+        "text": "Para los que dudan por el precio: cómprenlo. Es menos de lo que cuesta un café y un sándwich. La guía es directa al grano, sin rodeos. En 4 días noté que dormía mejor y amanecía descansado.",
         "timeAgo": "4 h",
         "likesCount": 567
+    },
+    {
+        "id": 12,
+        "name": "Sofia M.",
+        "avatarUrl": "https://i.pravatar.cc/150?u=12",
+        "text": "Tal cual, Héctor. Yo pagué con miedo pero la garantía me dio seguridad. Ahora ni loca pido el reembolso, esto vale oro.",
+        "timeAgo": "4 h",
+        "likesCount": 67
+    },
+    {
+        "id": 13,
+        "name": "Gustavo P.",
+        "avatarUrl": "https://i.pravatar.cc/150?u=13",
+        "text": "Soy entrenador personal desde hace 20 años y este enfoque de absorción del 99% es algo que voy a empezar a aplicar con mis clientes mayores de 50. Muy sólido el contenido.",
+        "timeAgo": "6 h",
+        "likesCount": 321
+    },
+    {
+        "id": 14,
+        "name": "Laura B.",
+        "avatarUrl": "https://i.pravatar.cc/150?u=14",
+        "text": "Wow, si un entrenador lo valida me da más confianza aún. Ya hice mi compra, gracias Gustavo.",
+        "timeAgo": "6 h",
+        "likesCount": 12
+    },
+    {
+        "id": 15,
+        "name": "Fernando T.",
+        "avatarUrl": "https://i.pravatar.cc/150?u=15",
+        "text": "Solo paso a decir que la parte sobre cómo evitar que la proteína se convierta en azúcar fue clave para mí. Soy diabético y esto me ayudó a controlar mis niveles mientras ganaba fuerza.",
+        "timeAgo": "8 h",
+        "likesCount": 876
     }
 ]

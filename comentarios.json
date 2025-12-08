@@ -2,106 +2,121 @@
   {
     "id": 1,
     "name": "Roberto Méndez",
-    "comment": "Tengo 62 años y sinceramente pensé que ya no había vuelta atrás con la pérdida de músculo. Llevo 3 semanas aplicando el Protocolo 99% y mis nietos me preguntan de dónde saqué tanta energía. ¡Mis piernas se sienten firmes otra vez!",
-    "is_reply": false,
-    "parent_id": null
+    "avatarUrl": "https://i.pravatar.cc/150?u=1",
+    "text": "Tengo 62 años y sinceramente pensé que ya no había vuelta atrás con la pérdida de músculo. Llevo 3 semanas aplicando el Protocolo 99% y mis nietos me preguntan de dónde saqué tanta energía. ¡Mis piernas se sienten firmes otra vez!",
+    "timeAgo": "3 min",
+    "likesCount": 42
   },
   {
     "id": 2,
     "name": "Carlos Ruiz",
-    "comment": "Totalmente de acuerdo contigo, Roberto. Yo era escéptico porque he probado mil suplementos caros, pero entender la combinación correcta de alimentos lo cambió todo. Es ciencia pura, nada de magia.",
-    "is_reply": true,
-    "parent_id": 1
+    "avatarUrl": "https://i.pravatar.cc/150?u=2",
+    "text": "Totalmente de acuerdo contigo, Roberto. Yo era escéptico porque he probado mil suplementos caros, pero entender la combinación correcta de alimentos lo cambió todo. Es ciencia pura, nada de magia.",
+    "timeAgo": "5 min",
+    "likesCount": 18
   },
   {
     "id": 3,
     "name": "María Fernanda Torres",
-    "comment": "Lo que más me gustó es que no tuve que comprar pastillas raras. Todo está en el supermercado, solo que no sabía cómo combinarlo. Por 9 dólares esto es un regalo, he gastado cientos en nutriólogos que no me dieron este resultado.",
-    "is_reply": false,
-    "parent_id": null
+    "avatarUrl": "https://i.pravatar.cc/150?u=3",
+    "text": "Lo que más me gustó es que no tuve que comprar pastillas raras. Todo está en el supermercado, solo que no sabía cómo combinarlo. Por 9 dólares esto es un regalo, he gastado cientos en nutriólogos que no me dieron este resultado.",
+    "timeAgo": "12 min",
+    "likesCount": 156
   },
   {
     "id": 4,
     "name": "Ana Lucía G.",
-    "comment": "Justo eso pensé yo, María. Es ridículamente barato para la información que trae. Mi piel y mi cabello también mejoraron muchísimo, creo que por el tema de la absorción real de proteínas.",
-    "is_reply": true,
-    "parent_id": 3
+    "avatarUrl": "https://i.pravatar.cc/150?u=4",
+    "text": "Justo eso pensé yo, María. Es ridículamente barato para la información que trae. Mi piel y mi cabello también mejoraron muchísimo, creo que por el tema de la absorción real de proteínas.",
+    "timeAgo": "15 min",
+    "likesCount": 34
   },
   {
     "id": 5,
     "name": "Jorge Luis Castillo",
-    "comment": "La conversión automática de moneda funcionó perfecto, pagué con mi tarjeta local sin problemas. Ya estoy leyendo el material y la parte de la 'Utilización Proteica' me voló la cabeza. Nunca nadie me había explicado esto.",
-    "is_reply": false,
-    "parent_id": null
+    "avatarUrl": "https://i.pravatar.cc/150?u=5",
+    "text": "La conversión automática de moneda funcionó perfecto, pagué con mi tarjeta local sin problemas. Ya estoy leyendo el material y la parte de la 'Utilización Proteica' me voló la cabeza. Nunca nadie me había explicado esto.",
+    "timeAgo": "45 min",
+    "likesCount": 12
   },
   {
     "id": 6,
     "name": "Eduardo V.",
-    "comment": "Es que los médicos convencionales no te cuentan esto. Yo empecé el lunes y ya siento la digestión diferente, mucho más ligera.",
-    "is_reply": true,
-    "parent_id": 5
+    "avatarUrl": "https://i.pravatar.cc/150?u=6",
+    "text": "Es que los médicos convencionales no te cuentan esto. Yo empecé el lunes y ya siento la digestión diferente, mucho más ligera.",
+    "timeAgo": "50 min",
+    "likesCount": 8
   },
   {
     "id": 7,
     "name": "Patricia Solís",
-    "comment": "Chicos, mi esposo y yo lo estamos haciendo juntos. Él recuperó masa muscular en los brazos que no veía hace 10 años, y yo logré eliminar esa flacidez del abdomen. ¡Recomendadísimo!",
-    "is_reply": false,
-    "parent_id": null
+    "avatarUrl": "https://i.pravatar.cc/150?u=7",
+    "text": "Chicos, mi esposo y yo lo estamos haciendo juntos. Él recuperó masa muscular en los brazos que no veía hace 10 años, y yo logré eliminar esa flacidez del abdomen. ¡Recomendadísimo!",
+    "timeAgo": "1 h",
+    "likesCount": 89
   },
   {
     "id": 8,
     "name": "Esteban D.",
-    "comment": "Qué envidia de la buena, Patricia. Yo empecé solo pero los resultados son tan rápidos que mi esposa se unió ayer al ver mis cambios.",
-    "is_reply": true,
-    "parent_id": 7
+    "avatarUrl": "https://i.pravatar.cc/150?u=8",
+    "text": "Qué envidia de la buena, Patricia. Yo empecé solo pero los resultados son tan rápidos que mi esposa se unió ayer al ver mis cambios.",
+    "timeAgo": "1 h",
+    "likesCount": 23
   },
   {
     "id": 9,
     "name": "Ricardo Arjona",
-    "comment": "Sufría de dolores articulares crónicos, pensé que era artritis inevitable por la edad. Resulta que me faltaba colágeno de calidad. Siguiendo el protocolo, el dolor desapareció en un 90%. Gracias por compartir esto.",
-    "is_reply": false,
-    "parent_id": null
+    "avatarUrl": "https://i.pravatar.cc/150?u=9",
+    "text": "Sufría de dolores articulares crónicos, pensé que era artritis inevitable por la edad. Resulta que me faltaba colágeno de calidad. Siguiendo el protocolo, el dolor desapareció en un 90%. Gracias por compartir esto.",
+    "timeAgo": "2 h",
+    "likesCount": 234
   },
   {
     "id": 10,
     "name": "Carmen Velasco",
-    "comment": "¡Increíble Ricardo! A mí me pasó igual con la cadera. Es impresionante lo que el cuerpo puede hacer cuando le das los bloques de construcción correctos.",
-    "is_reply": true,
-    "parent_id": 9
+    "avatarUrl": "https://i.pravatar.cc/150?u=10",
+    "text": "¡Increíble Ricardo! A mí me pasó igual con la cadera. Es impresionante lo que el cuerpo puede hacer cuando le das los bloques de construcción correctos.",
+    "timeAgo": "2 h",
+    "likesCount": 45
   },
   {
     "id": 11,
     "name": "Héctor Salinas",
-    "comment": "Para los que dudan por el precio: cómprenlo. Es menos de lo que cuesta un café y un sándwich. La guía es directa al grano, sin rodeos. En 4 días noté que dormía mejor y amanecía descansado.",
-    "is_reply": false,
-    "parent_id": null
+    "avatarUrl": "https://i.pravatar.cc/150?u=11",
+    "text": "Para los que dudan por el precio: cómprenlo. Es menos de lo que cuesta un café y un sándwich. La guía es directa al grano, sin rodeos. En 4 días noté que dormía mejor y amanecía descansado.",
+    "timeAgo": "4 h",
+    "likesCount": 567
   },
   {
     "id": 12,
     "name": "Sofia M.",
-    "comment": "Tal cual, Héctor. Yo pagué con miedo pero la garantía me dio seguridad. Ahora ni loca pido el reembolso, esto vale oro.",
-    "is_reply": true,
-    "parent_id": 11
+    "avatarUrl": "https://i.pravatar.cc/150?u=12",
+    "text": "Tal cual, Héctor. Yo pagué con miedo pero la garantía me dio seguridad. Ahora ni loca pido el reembolso, esto vale oro.",
+    "timeAgo": "4 h",
+    "likesCount": 67
   },
   {
     "id": 13,
     "name": "Gustavo P.",
-    "comment": "Soy entrenador personal desde hace 20 años y este enfoque de absorción del 99% es algo que voy a empezar a aplicar con mis clientes mayores de 50. Muy sólido el contenido.",
-    "is_reply": false,
-    "parent_id": null
+    "avatarUrl": "https://i.pravatar.cc/150?u=13",
+    "text": "Soy entrenador personal desde hace 20 años y este enfoque de absorción del 99% es algo que voy a empezar a aplicar con mis clientes mayores de 50. Muy sólido el contenido.",
+    "timeAgo": "6 h",
+    "likesCount": 321
   },
   {
     "id": 14,
     "name": "Laura B.",
-    "comment": "Wow, si un entrenador lo valida me da más confianza aún. Ya hice mi compra, gracias Gustavo.",
-    "is_reply": true,
-    "parent_id": 13
+    "avatarUrl": "https://i.pravatar.cc/150?u=14",
+    "text": "Wow, si un entrenador lo valida me da más confianza aún. Ya hice mi compra, gracias Gustavo.",
+    "timeAgo": "6 h",
+    "likesCount": 12
   },
   {
     "id": 15,
     "name": "Fernando T.",
-    "comment": "Solo paso a decir que la parte sobre cómo evitar que la proteína se convierta en azúcar fue clave para mí. Soy diabético y esto me ayudó a controlar mis niveles mientras ganaba fuerza.",
-    "is_reply": false,
-    "parent_id": null
+    "avatarUrl": "https://i.pravatar.cc/150?u=15",
+    "text": "Solo paso a decir que la parte sobre cómo evitar que la proteína se convierta en azúcar fue clave para mí. Soy diabético y esto me ayudó a controlar mis niveles mientras ganaba fuerza.",
+    "timeAgo": "8 h",
+    "likesCount": 876
   }
 ]
