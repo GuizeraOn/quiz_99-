@@ -16,64 +16,59 @@ export default function FacebookComments() {
                 </div>
             </div>
 
-            {/* Fake Input */}
-            <div className="flex items-center gap-2 mb-6">
-                <div className="w-10 h-10 rounded-full bg-gray-200 shrink-0 overflow-hidden">
-                    <img
-                        src="https://i.pravatar.cc/150?u=guest"
-                        alt="User"
-                        className="w-full h-full object-cover opacity-80"
-                    />
-                </div>
-                <div className="flex-1 bg-[#f0f2f5] rounded-full h-10 px-4 flex items-center text-[#65676b] text-[15px] cursor-text">
-                    Escribe un comentario...
-                </div>
-            </div>
+
 
             {/* Comments List */}
             <div className="space-y-4">
-                {commentsData.map((comment) => (
-                    <div key={comment.id} className="flex gap-2">
-                        {/* Avatar */}
-                        <div className="shrink-0 cursor-pointer">
-                            <img
-                                src={comment.avatarUrl}
-                                alt={comment.name}
-                                className="w-10 h-10 rounded-full object-cover border border-gray-100"
-                            />
-                        </div>
+                {commentsData.map((comment) => {
+                    // Visual changes for Reply
+                    const isReply = (comment as any).isReply;
+                    const containerClass = isReply ? "flex gap-2 pl-12" : "flex gap-2";
+                    const avatarSize = isReply ? "w-8 h-8" : "w-10 h-10"; // Smaller avatar for reply
 
-                        {/* Content */}
-                        <div className="flex-1">
-                            {/* Bubble */}
-                            <div className="bg-[#f0f2f5] rounded-2xl px-3 py-2 inline-block">
-                                <div className="font-semibold text-[13px] text-[#050505] leading-snug cursor-pointer hover:underline">
-                                    {comment.name}
-                                </div>
-                                <div className="text-[15px] text-[#050505] leading-snug mt-0.5">
-                                    {comment.text}
-                                </div>
+                    return (
+                        <div key={comment.id} className={containerClass}>
+                            {/* Avatar */}
+                            <div className="shrink-0 cursor-pointer">
+                                <img
+                                    src={comment.avatarUrl}
+                                    alt={comment.name}
+                                    className={`${avatarSize} rounded-full object-cover border border-gray-100`}
+                                />
                             </div>
 
-                            {/* Meta Actions */}
-                            <div className="flex items-center gap-4 ml-3 mt-1 text-[12px] font-bold text-[#65676b]">
-                                <span className="cursor-pointer hover:underline">Me gusta</span>
-                                <span className="cursor-pointer hover:underline">Responder</span>
-                                <span className="font-normal text-gray-500 hover:underline cursor-pointer">{comment.timeAgo}</span>
-                            </div>
-
-                            {/* Likes Indicator (Fake) */}
-                            {comment.likesCount > 0 && (
-                                <div className="flex items-center gap-1 ml-auto -mt-6 mr-2 bg-white rounded-full px-1 shadow-sm border border-white float-right relative top-4">
-                                    <div className="bg-[#1877f2] rounded-full p-[2px]">
-                                        <ThumbsUp size={8} className="text-white fill-current" />
+                            {/* Content */}
+                            <div className="flex-1">
+                                {/* Bubble */}
+                                <div className="bg-[#f0f2f5] rounded-2xl px-3 py-2 inline-block">
+                                    <div className="font-semibold text-[13px] text-[#050505] leading-snug cursor-pointer hover:underline">
+                                        {comment.name}
                                     </div>
-                                    <span className="text-[11px] text-[#65676b]">{comment.likesCount}</span>
+                                    <div className="text-[15px] text-[#050505] leading-snug mt-0.5">
+                                        {comment.text}
+                                    </div>
                                 </div>
-                            )}
+
+                                {/* Meta Actions */}
+                                <div className="flex items-center gap-4 ml-3 mt-1 text-[12px] font-bold text-[#65676b]">
+                                    <span className="cursor-pointer hover:underline">Me gusta</span>
+                                    <span className="cursor-pointer hover:underline">Responder</span>
+                                    <span className="font-normal text-gray-500 hover:underline cursor-pointer">{comment.timeAgo}</span>
+                                </div>
+
+                                {/* Likes Indicator (Fake) */}
+                                {comment.likesCount > 0 && (
+                                    <div className="flex items-center gap-1 ml-auto -mt-6 mr-2 bg-white rounded-full px-1 shadow-sm border border-white float-right relative top-4">
+                                        <div className="bg-[#1877f2] rounded-full p-[2px]">
+                                            <ThumbsUp size={8} className="text-white fill-current" />
+                                        </div>
+                                        <span className="text-[11px] text-[#65676b]">{comment.likesCount}</span>
+                                    </div>
+                                )}
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    );
+                })}
             </div>
 
             <div className="mt-6 text-center">
