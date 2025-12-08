@@ -132,7 +132,7 @@ export default function DashboardClient({ data }: DashboardClientProps) {
                 {/* Funil de Retenção */}
                 <div className="lg:col-span-2 bg-slate-900/50 border border-slate-800 rounded-2xl p-6">
                     <h3 className="text-xl font-semibold mb-6 text-slate-200">Funil de Retenção por Etapa</h3>
-                    <div className="h-[350px] w-full">
+                    <div style={{ width: '100%', height: 350, minHeight: 350 }}>
                         <ResponsiveContainer width="100%" height="100%">
                             <BarChart data={funnelData} margin={{ top: 5, right: 30, left: 0, bottom: 5 }}>
                                 <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" vertical={false} />
@@ -161,7 +161,7 @@ export default function DashboardClient({ data }: DashboardClientProps) {
                             <Smartphone size={20} className="text-slate-400" />
                             Dispositivos
                         </h3>
-                        <div className="h-[200px] w-full relative">
+                        <div style={{ width: '100%', height: 200, minHeight: 200, position: 'relative' }}>
                             <ResponsiveContainer width="100%" height="100%">
                                 <PieChart>
                                     <Pie
