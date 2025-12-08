@@ -1,0 +1,50 @@
+[
+    {
+        "id": 101,
+        "name": "Roberto V.",
+        "avatarUrl": "https://i.pravatar.cc/150?u=101",
+        "text": "Al principio dudé porque he probado de todo, pero después de 3 semanas siguiendo el protocolo, me siento como si tuviera 30 años otra vez. ¡La energía volvió!",
+        "timeAgo": "3 min",
+        "likesCount": 42
+    },
+    {
+        "id": 102,
+        "name": "Miguel Ángel Torres",
+        "avatarUrl": "https://i.pravatar.cc/150?u=102",
+        "text": "Tengo 58 años y pensaba que esto era 'normal' por la edad. Dr. Javier, gracias por abrirme los ojos. Ya no tengo ese cansancio crónico después de comer.",
+        "timeAgo": "12 min",
+        "likesCount": 156
+    },
+    {
+        "id": 103,
+        "name": "Carlos Ruiz",
+        "avatarUrl": "https://i.pravatar.cc/150?u=103",
+        "text": "Acceso inmediato, todo llegó al correo al instante. Muy profesional.",
+        "timeAgo": "45 min",
+        "likesCount": 12
+    },
+    {
+        "id": 104,
+        "name": "Fernando G.",
+        "avatarUrl": "https://i.pravatar.cc/150?u=104",
+        "text": "Lo mejor es que no tuve que dejar de comer lo que me gusta, solo ajustar los horarios como explica el video. ¡5 kilos menos de pura inflamación!",
+        "timeAgo": "1 h",
+        "likesCount": 89
+    },
+    {
+        "id": 105,
+        "name": "Ana María L.",
+        "avatarUrl": "https://i.pravatar.cc/150?u=105",
+        "text": "Se lo compré a mi esposo que estaba muy decaído. El cambio de humor y energía es impresionante. Chicos, háganlo por su familia 🙏",
+        "timeAgo": "2 h",
+        "likesCount": 234
+    },
+    {
+        "id": 106,
+        "name": "Dr. Pablo S.",
+        "avatarUrl": "https://i.pravatar.cc/150?u=106",
+        "text": "Como colega, confirmo que la base científica sobre la síntesis proteica es correcta. Excelente material educativo.",
+        "timeAgo": "4 h",
+        "likesCount": 567
+    }
+]

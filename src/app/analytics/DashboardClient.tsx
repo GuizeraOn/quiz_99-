@@ -1,5 +1,7 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
+
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell, PieChart, Pie, Legend } from 'recharts';
 import { Users, Target, CheckCircle2, Timer, Smartphone, Monitor, Activity } from 'lucide-react';
 import { QUIZ_DATA } from '@/data/quizData';
@@ -7,22 +9,28 @@ import { motion } from 'framer-motion';
 
 interface DashboardClientProps {
     data: any[];
+    initialDays: number;
 }
 
 const COLORS = ['#8b5cf6', '#ec4899', '#3b82f6', '#10b981', '#f59e0b'];
 
-export default function DashboardClient({ data }: DashboardClientProps) {
+export default function DashboardClient({ data, initialDays }: DashboardClientProps) {
+    const router = useRouter();
+
+    const handleTimeFilter = (days: number) => {
+        router.push(`?days=${days}`);
+    };
     // --- CÁLCULO DE KPIS ---
     const totalVisitors = data.length;
 
     // Leads Iniciados: Quem respondeu pelo menos 1 pergunta (current_step > 0)
     const leadsIniciados = data.filter(s => s.current_step > 0).length;
 
-    // Leads Qualificados: Status 'qualified' ou 'completed' (ou > 50% steps)
-    const leadsQualificados = data.filter(s => s.status === 'qualified' || s.status === 'completed').length;
+    // Leads Qualificados: Status 'qualified', 'completed' (VSL) ou 'checkout'
+    const leadsQualificados = data.filter(s => ['qualified', 'completed', 'checkout'].includes(s.status)).length;
 
-    // Completaram: is_completed ou status 'completed'
-    const finalConversion = data.filter(s => s.completed || s.status === 'completed').length;
+    // Completaram: Conversão Final é apenas quem CLICKOU no Checkout
+    const finalConversion = data.filter(s => s.status === 'checkout').length;
 
     // Taxas
     const engagementRate = totalVisitors > 0 ? Math.round((leadsIniciados / totalVisitors) * 100) : 0;
@@ -72,7 +80,7 @@ export default function DashboardClient({ data }: DashboardClientProps) {
     data.forEach(session => {
         if (!session.answers) return;
         Object.values(session.answers).forEach((val: any) => {
-            if (typeof val === 'string') {
+            if (typeof val === 'string' && val !== 'viewed') {
                 answerHeatmap[val] = (answerHeatmap[val] || 0) + 1;
             }
         });
@@ -111,9 +119,32 @@ export default function DashboardClient({ data }: DashboardClientProps) {
                     </h1>
                     <p className="text-slate-400 text-sm mt-1">Análise de Performance do Quiz em Tempo Real</p>
                 </div>
-                <div className="flex items-center gap-2 bg-slate-900 px-4 py-2 rounded-lg border border-slate-800">
-                    <Activity size={16} className="text-emerald-400 animate-pulse" />
-                    <span className="text-xs font-mono text-emerald-400">STATUS: ONLINE</span>
+
+                <div className="flex flex-wrap items-center gap-3">
+                    <div className="flex bg-slate-900 border border-slate-800 rounded-lg p-1">
+                        {[
+                            { label: 'Hoje', val: 1 },
+                            { label: '7D', val: 7 },
+                            { label: '30D', val: 30 },
+                            { label: 'Total', val: 0 }
+                        ].map((opt) => (
+                            <button
+                                key={opt.label}
+                                onClick={() => handleTimeFilter(opt.val)}
+                                className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors ${(initialDays === opt.val) || (initialDays === 7 && opt.val === 7 && !initialDays) // Falback visual logic if undefined
+                                    ? 'bg-emerald-500/20 text-emerald-400'
+                                    : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800'
+                                    }`}
+                            >
+                                {opt.label}
+                            </button>
+                        ))}
+                    </div>
+
+                    <div className="flex items-center gap-2 bg-slate-900 px-4 py-2 rounded-lg border border-slate-800">
+                        <Activity size={16} className="text-emerald-400 animate-pulse" />
+                        <span className="text-xs font-mono text-emerald-400">STATUS: ONLINE</span>
+                    </div>
                 </div>
             </header>
 

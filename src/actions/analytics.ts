@@ -111,15 +111,44 @@ export async function completeSession(sessionId: string, totalTimeSeconds: numbe
 }
 
 /**
+ * Registra o clique no botão de checkout.
+ * Define status como 'checkout'.
+ */
+export async function trackCheckout(sessionId: string) {
+    if (!sessionId) return;
+
+    try {
+        // Atualiza status para 'checkout' (Conversão Final)
+        await supabaseAdmin
+            .from('quiz_sessions')
+            .update({
+                status: 'checkout',
+                updated_at: new Date().toISOString()
+            })
+            .eq('id', sessionId);
+    } catch (error) {
+        console.error('Analytics Error (trackCheckout):', error);
+    }
+}
+
+/**
  * Busca dados para o Dashboard (Server-side fetch)
  */
-export async function getAnalyticsMetrics() {
+export async function getAnalyticsMetrics(days: number = 30) {
     try {
-        const { data, error } = await supabaseAdmin
+        let query = supabaseAdmin
             .from('quiz_sessions')
             .select('*')
-            .order('created_at', { ascending: false })
-            .limit(1000); // Limite de 1000 para performance inicial
+            .order('created_at', { ascending: false });
+
+        if (days > 0) {
+            const date = new Date();
+            date.setDate(date.getDate() - days);
+            query = query.gte('created_at', date.toISOString());
+        }
+
+        // Aumentando limite para permitir análises mais robustas
+        const { data, error } = await query.limit(5000);
 
         if (error) throw error;
         return data || [];

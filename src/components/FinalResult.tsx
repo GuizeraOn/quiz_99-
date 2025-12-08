@@ -1,11 +1,27 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { trackCheckout } from '@/actions/analytics';
+import AdvertorialHeader from './AdvertorialHeader';
+import FacebookComments from './FacebookComments';
 
-export default function FinalResult() {
+interface FinalResultProps {
+    sessionId: string | null;
+}
+
+export default function FinalResult({ sessionId }: FinalResultProps) {
     const [showButton, setShowButton] = useState(false);
+    const [currentDate, setCurrentDate] = useState('');
 
     useEffect(() => {
+        // Set formatted date on client side to avoid hydration mismatch
+        const date = new Date();
+        setCurrentDate(date.toLocaleDateString('es-ES', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+        }));
+
         // Load Vturb SDK Script
         if (!document.querySelector('script[src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js"]')) {
             const s = document.createElement("script");
@@ -22,47 +38,66 @@ export default function FinalResult() {
         return () => clearTimeout(timer);
     }, []);
 
+    const handleCheckout = () => {
+        if (sessionId) {
+            trackCheckout(sessionId);
+        }
+        console.log('Redirecting to checkout...');
+    };
+
     const embedHtml = `
-        <div id="ifr_6935c6812200385961f4429d_wrapper" style="margin: 0 auto; width: 100%; max-width: 400px;">
-            <div style="position: relative; padding: 177.77777777777777% 0 0 0;" id="ifr_6935c6812200385961f4429d_aspect">
-                <iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_6935c6812200385961f4429d" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" referrerpolicy="origin" onload="this.onload=null; this.src='https://scripts.converteai.net/2d2f47c5-b088-472f-a9cf-7a9674004f30/players/6935c6812200385961f4429d/v4/embed.html' + (location.search || '?') + '&vl=' + encodeURIComponent(location.href)"></iframe>
+        <div id="ifr_69375d239491786676f17592_wrapper" style="margin: 0 auto; width: 100%; max-width: 400px;">
+            <div style="position: relative; padding: 133.33333333333331% 0 0 0;" id="ifr_69375d239491786676f17592_aspect">
+                <iframe frameborder="0" allowfullscreen src="about:blank" id="ifr_69375d239491786676f17592" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" referrerpolicy="origin" onload="this.onload=null; this.src='https://scripts.converteai.net/2d2f47c5-b088-472f-a9cf-7a9674004f30/players/69375d239491786676f17592/v4/embed.html' + (location.search || '?') + '&vl=' + encodeURIComponent(location.href)"></iframe>
             </div>
         </div>
     `;
 
     return (
-        <div className="container mx-auto px-4 py-8 max-w-4xl text-center">
-            <div className="bg-red-50 border-l-4 border-red-500 p-4 mb-8 text-left rounded-r-lg shadow-sm">
-                <p className="text-red-800 font-bold uppercase text-sm tracking-wide mb-1">Diagnóstico Completado</p>
-                <p className="text-red-900 font-serif text-lg">Perfil Metabólico: <span className="font-extrabold">CRÍTICO</span> - Malabsorción de Proteínas Detectada.</p>
-            </div>
+        <div className="flex flex-col min-h-[100dvh] bg-white text-gray-900 font-sans">
+            {/* 1. Fake News Navigation (Fixed Height ~50px) */}
+            <AdvertorialHeader />
 
-            <h1 className="text-3xl md:text-5xl font-serif font-bold text-text-main leading-tight mb-6">
-                <span className="text-red-600">ATENCIÓN:</span> La mayoría de las proteínas que comes podrían estar convirtiéndose en <span className="bg-yellow-200 px-2 rounded">AZÚCAR</span> en lugar de músculo...
-            </h1>
+            {/* Main Content Area */}
+            <main className="flex-1 w-full max-w-2xl mx-auto px-4 pt-4 pb-8">
 
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 font-light italic">
-                "Mira la historia de Roberto, de 70 años, que revirtió esto en 4 semanas."
-            </p>
+                {/* 2. Editorial Typography & Metadata */}
+                <article className="mb-4">
+                    <h1 className="font-serif font-bold text-xl md:text-3xl leading-tight text-gray-900 mb-2">
+                        <span className="text-[#c0392b]">ALERTA MÉDICA:</span> La mayoría de las proteínas que comes podrían convertirse en <span className="bg-yellow-100 px-1">AZÚCAR</span> en lugar de músculo
+                    </h1>
 
-            {/* VSL Embed */}
-            <div className="w-full mb-8 flex justify-center">
-                <div dangerouslySetInnerHTML={{ __html: embedHtml }} className="w-full" />
-            </div>
+                    <div className="flex items-center gap-2 text-xs text-gray-500 border-b border-gray-100 pb-3 mb-3">
+                        <span className="font-semibold text-gray-700">Por Dr. Javier Martínez</span>
+                        <span>|</span>
+                        <span>Atualizado: {currentDate}</span>
+                    </div>
+                </article>
 
-            {/* Delayed CTA Button */}
-            {showButton && (
-                <div className="animate-fade-in-up">
-                    <button className="w-full md:w-auto bg-green-600 hover:bg-green-700 text-white font-bold text-xl md:text-2xl py-6 px-12 rounded-lg shadow-xl transform transition hover:scale-[1.02] animate-bounce-slow mb-4">
-                        QUIERO ACCEDER AL PROTOCOLO
-                    </button>
-                    <p className="text-sm text-gray-500">Oferta válida por tiempo limitado.</p>
+                {/* 3. "Above the Fold" Video Constraint 
+                    To ensure 100dvh fit on typical mobile, we minimize padding.
+                */}
+                <section className="w-full mb-8 bg-black rounded-lg overflow-hidden shadow-sm relative z-10">
+                    <div dangerouslySetInnerHTML={{ __html: embedHtml }} className="w-full" />
+                </section>
+
+                {/* 4. CTA Button (Appears after delay) */}
+                {showButton && (
+                    <div className="animate-fade-in-up mt-8 mb-12 text-center">
+                        <button
+                            onClick={handleCheckout}
+                            className="w-full bg-[#27ae60] hover:bg-[#219150] active:bg-[#1e8449] text-white font-bold text-xl py-4 px-6 rounded-lg shadow-lg transform transition-all hover:-translate-y-0.5"
+                        >
+                            QUIERO ACCEDER AL PROTOCOLO
+                        </button>
+                    </div>
+                )}
+
+                {/* 5. Social Proof Comments */}
+                <div className="mt-12 border-t border-gray-100 pt-8">
+                    <FacebookComments />
                 </div>
-            )}
-
-            <div className="mt-8 text-sm text-gray-500 max-w-2xl mx-auto">
-                <p>Este video contiene información sensible sobre su salud. Por favor, mírelo en un lugar privado.</p>
-            </div>
+            </main>
         </div>
     );
 }

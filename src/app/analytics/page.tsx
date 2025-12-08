@@ -10,8 +10,17 @@ export const metadata: Metadata = {
 // Force dynamic rendering so we always get fresh data
 export const dynamic = 'force-dynamic';
 
-export default async function AnalyticsPage() {
-    const data = await getAnalyticsMetrics();
+interface PageProps {
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
 
-    return <DashboardClient data={data} />;
+export default async function AnalyticsPage({ searchParams }: PageProps) {
+    const params = await searchParams;
+    const daysParam = params.days;
+    // Default to 7 days if not specified
+    const days = daysParam ? parseInt(String(daysParam)) : 7;
+
+    const data = await getAnalyticsMetrics(days);
+
+    return <DashboardClient data={data} initialDays={days} />;
 }

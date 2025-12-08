@@ -49,8 +49,10 @@ export default function QuizContainer() {
     const handleNext = () => {
         // Track generic steps (interactions without explicit option value)
         if (sessionIdRef.current) {
-            // Use fire-and-forget
-            trackProgress(sessionIdRef.current, currentIndex + 1, 'viewed', currentStep.id);
+            // Only track 'viewed' if it's NOT a question (because questions track their own answers)
+            if (currentStep.type !== 'question') {
+                trackProgress(sessionIdRef.current, currentIndex + 1, 'viewed', currentStep.id);
+            }
         }
 
         if (currentIndex < QUIZ_DATA.length - 1) {
@@ -78,7 +80,7 @@ export default function QuizContainer() {
     };
 
     if (isCompleted) {
-        return <FinalResult />;
+        return <FinalResult sessionId={sessionIdRef.current} />;
     }
 
     // Special Case: Final Checklist Loading Screen
