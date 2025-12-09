@@ -42,7 +42,7 @@ export default function FinalResult({ sessionId }: FinalResultProps) {
         if (sessionId) {
             trackCheckout(sessionId);
         }
-        console.log('Redirecting to checkout...');
+        window.location.href = 'https://pay.hotmart.com/H103318329E?checkoutMode=10';
     };
 
     const embedHtml = `
