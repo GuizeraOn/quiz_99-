@@ -76,8 +76,18 @@ export const QUIZ_DATA: QuizStep[] = [
         question: '¿Cuál es tu <b>género biológico</b>?',
         progressBarText: 'Configurando parámetros biológicos...',
         options: [
-            { id: 'male', label: 'Hombre', value: 'male' },
-            { id: 'female', label: 'Mujer', value: 'female' },
+            {
+                id: 'male',
+                label: 'Hombre',
+                value: 'male',
+                imageUrl: 'https://i.postimg.cc/pXBWyB7H/Untitled_(4).webp'
+            },
+            {
+                id: 'female',
+                label: 'Mujer',
+                value: 'female',
+                imageUrl: 'https://i.postimg.cc/28xk3xJ8/Untitled-(5).webp'
+            },
         ],
     },
     {

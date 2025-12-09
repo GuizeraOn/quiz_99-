@@ -50,7 +50,7 @@ export default function QuizCard({ question, options, onSelect }: QuizCardProps)
 
             <div className={clsx(
                 "gap-4",
-                hasImages ? "grid grid-cols-1 md:grid-cols-2" : "flex flex-col space-y-4 md:space-y-0 md:gap-4"
+                hasImages ? "grid grid-cols-2" : "flex flex-col space-y-4 md:space-y-0 md:gap-4"
             )}>
                 {options.map((option, index) => (
                     <motion.button
