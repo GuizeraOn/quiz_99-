@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { Merriweather, Open_Sans } from "next/font/google"; // Import fonts
+import { Merriweather, Open_Sans } from "next/font/google";
 import "./globals.css";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import AnalyticsScripts from "@/components/AnalyticsScripts";
+import { Suspense } from "react";
 
 const merriweather = Merriweather({
   variable: "--font-merriweather",
@@ -37,6 +40,9 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <Suspense fallback={null}>
+          <AnalyticsScripts />
+        </Suspense>
       </body>
     </html>
   );
